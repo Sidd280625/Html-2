@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+				font-family: Arial, sans-serif;
+				background-color: #000000;
+				color: #ffffff;
+			}
+			.container {
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr;
+				grid-template-rows: 1fr 1fr 1fr 1fr;
+				grid-template-areas:
+					'heading heading heading'
+					'animation-1 animation-2 animation-3'
+					'animation-4 animation-5 animation-6'
+					'animation-7 animation-8 animation-9';
+				gap: 50px;
+				place-items: center;
+			}
+			.heading {
+				grid-area: heading;
+				text-align: center;
+				font-size: 2.5rem;
+				padding: 20px 0;
+			}
+			.animation-1 {
+				grid-area: animation-1;
+			}
+			.animation-2 {
+				grid-area: animation-2;
+			}
+			.animation-3 {
+				grid-area: animation-3;
+			}
+			.animation-4 {
+				grid-area: animation-4;
+			}
+			.animation-5 {
+				grid-area: animation-5;
+			}
+			.animation-6 {
+				grid-area: animation-6;
+			}
+			.animation-7 {
+				grid-area: animation-7;
+			}
+			.animation-8 {
+				grid-area: animation-8;
+			}
+			.animation-9 {
+				grid-area: animation-9;
+			}
+			@keyframes moveUpDown {
+				0%,
+				100% {
+					transform: translateY(0);
+				}
+				33% {
+					transform: translateY(-20px);
+				}
+				66% {
+					transform: translateY(20px);
+				}
+			}
+			.animation-1.active {
+				animation: moveUpDown 2s infinite;
+			}
+
+			@keyframes rotate {
+				to {
+					transform: rotate(360deg);
+				}
+			}
+
+			.animation-2.active {
+				animation: rotate 3s linear infinite;
+			}
+
+			@keyframes scaleUpDown {
+				0%,
+				100% {
+					transform: scaleY(1);
+				}
+				50% {
+					transform: scaleY(1.5);
+				}
+			}
+
+			.animation-3.active {
+				animation: scaleUpDown 2s infinite;
+			}
+
+			@keyframes fadeInOut {
+				0%,
+				100% {
+					opacity: 1;
+				}
+				50% {
+					opacity: 0.5;
+				}
+			}
+
+			.animation-4.active {
+				animation: fadeInOut 3s infinite;
+			}
+
+			@keyframes slideLeftRight {
+				0%,
+				100% {
+					transform: translateX(0);
+				}
+				50% {
+					transform: translateX(20px);
+				}
+			}
+
+			.animation-5.active {
+				animation: slideLeftRight 2s infinite;
+			}
+
+			@keyframes bounce {
+				0%,
+				100% {
+					transform: translateY(0);
+				}
+				50% {
+					transform: translateY(-30px);
+				}
+			}
+
+			.animation-6.active {
+				animation: bounce 3s infinite;
+			}
+
+			@keyframes pulse {
+				0%,
+				100% {
+					transform: scale(1);
+				}
+				50% {
+					transform: scale(1.2);
+				}
+			}
+
+			.animation-7.active {
+				animation: pulse 2s infinite;
+			}
+
+			@keyframes colorChange {
+				0%,
+				100% {
+					background-color: #ece6e5;
+				}
+				50% {
+					background-color: #a29b9a;
+				}
+			}
+
+			.animation-8.active {
+				animation: colorChange 3s infinite;
+			}
+
+			@keyframes scaleLeftRight {
+				0%,
+				100% {
+					transform: scaleX(1);
+				}
+				50% {
+					transform: scaleX(1.5);
+				}
+			}
+
+			.animation-9.active {
+				animation: scaleLeftRight 2s infinite;
+			}
+
+			.animation-1,
+			.animation-2,
+			.animation-3,
+			.animation-4,
+			.animation-5,
+			.animation-6,
+			.animation-7,
+			.animation-8,
+			.animation-9 {
+				width: 50px;
+				height: 50px;
+				padding: 50px;
+				margin: 20px;
+				background-color: #ece6e5;
+				border-radius: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1 class="heading">This is My Animation Project</h1>
+			<div class="animation-1 active"></div>
+			<div class="animation-2 active"></div>
+			<div class="animation-3 active"></div>
+			<div class="animation-4 active"></div>
+			<div class="animation-5 active"></div>
+			<div class="animation-6 active"></div>
+			<div class="animation-7 active"></div>
+			<div class="animation-8 active"></div>
+			<div class="animation-9 active"></div>
+		</div>
+		<script>
+			const animations = document.querySelectorAll(
+				'.animation-1, .animation-2, .animation-3, .animation-4, .animation-5, .animation-6, .animation-7, .animation-8, .animation-9'
+			);
+			animations.forEach((animation) => {
+				animation.addEventListener('click', () => {
+					animation.classList.toggle('active');
+				});
+			});
+		</script>
+	</body>
+</html>

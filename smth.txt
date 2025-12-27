@@ -1,0 +1,5 @@
+Animations:
+    hover
+    rotate
+    pulse
+    
