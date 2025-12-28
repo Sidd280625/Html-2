@@ -15,12 +15,12 @@
 			.container {
 				display: grid;
 				grid-template-columns: 1fr 1fr 1fr;
-				grid-template-rows: 1fr 1fr 1fr 1fr;
+				grid-template-rows: 1fr 1fr 0.25fr 1fr 0.25fr 1fr 0.25fr;
 				grid-template-areas:
 					'heading heading heading'
-					'animation-1 animation-2 animation-3'
-					'animation-4 animation-5 animation-6'
-					'animation-7 animation-8 animation-9';
+					'animation-container-1 animation-container-2 animation-container-3'
+					'animation-container-4 animation-container-5 animation-container-6'
+					'animation-container-7 animation-container-8 animation-container-9';
 				gap: 50px;
 				place-items: center;
 			}
@@ -30,32 +30,32 @@
 				font-size: 2.5rem;
 				padding: 20px 0;
 			}
-			.animation-1 {
-				grid-area: animation-1;
+			.animation-container-1 {
+				grid-area: animation-container-1;
 			}
-			.animation-2 {
-				grid-area: animation-2;
+			.animation-container-2 {
+				grid-area: animation-container-2;
 			}
-			.animation-3 {
-				grid-area: animation-3;
+			.animation-container-3 {
+				grid-area: animation-container-3;
 			}
-			.animation-4 {
-				grid-area: animation-4;
+			.animation-container-4 {
+				grid-area: animation-container-4;
 			}
-			.animation-5 {
-				grid-area: animation-5;
+			.animation-container-5 {
+				grid-area: animation-container-5;
 			}
-			.animation-6 {
-				grid-area: animation-6;
+			.animation-container-6 {
+				grid-area: animation-container-6;
 			}
-			.animation-7 {
-				grid-area: animation-7;
+			.animation-container-7 {
+				grid-area: animation-container-7;
 			}
-			.animation-8 {
-				grid-area: animation-8;
+			.animation-container-8 {
+				grid-area: animation-container-8;
 			}
-			.animation-9 {
-				grid-area: animation-9;
+			.animation-container-9 {
+				grid-area: animation-container-9;
 			}
 			@keyframes moveUpDown {
 				0%,
@@ -195,30 +195,113 @@
 				padding: 50px;
 				margin: 20px;
 				background-color: #ece6e5;
-				border-radius: 10px;
+				border-radius: 20px;
+				margin-bottom: 80px;
+			}
+			.animation-container-1,
+			.animation-container-2,
+			.animation-container-3,
+			.animation-container-4,
+			.animation-container-5,
+			.animation-container-6,
+			.animation-container-7,
+			.animation-container-8,
+			.animation-container-9 {
+				text-align: center;
+				place-items: center;
+				gap: 10%;
+			}
+			.animation-toggle-1,
+			.animation-toggle-2,
+			.animation-toggle-3,
+			.animation-toggle-4,
+			.animation-toggle-5,
+			.animation-toggle-6,
+			.animation-toggle-7,
+			.animation-toggle-8,
+			.animation-toggle-9 {
+				margin-top: 10px;
+				padding: 5px 10px;
+				font-size: 1rem;
+				cursor: pointer;
+				border: none;
+				border-radius: 18px;
+				box-shadow: 5px 5px 5px #252525;
+				transition: background-color 0.3s ease, transform 0.3s;
+			}
+			.animation-toggle-1:hover,
+			.animation-toggle-2:hover,
+			.animation-toggle-3:hover,
+			.animation-toggle-4:hover,
+			.animation-toggle-5:hover,
+			.animation-toggle-6:hover,
+			.animation-toggle-7:hover,
+			.animation-toggle-8:hover,
+			.animation-toggle-9:hover {
+				background-color: #afabab;
+				transform: scale(1.05);
+				transform: translateY(-20px);
 			}
 		</style>
 	</head>
 	<body>
 		<div class="container">
 			<h1 class="heading">This is My Animation Project</h1>
-			<div class="animation-1 active"></div>
-			<div class="animation-2 active"></div>
-			<div class="animation-3 active"></div>
-			<div class="animation-4 active"></div>
-			<div class="animation-5 active"></div>
-			<div class="animation-6 active"></div>
-			<div class="animation-7 active"></div>
-			<div class="animation-8 active"></div>
-			<div class="animation-9 active"></div>
+
+			<div class="animation-container-1">
+				<div class="animation-1 active"></div>
+				<button class="animation-toggle-1">Toggle Animations</button>
+			</div>
+
+			<div class="animation-container-2">
+				<div class="animation-2 active"></div>
+				<button class="animation-toggle-2">Toggle Animations</button>
+			</div>
+
+			<div class="animation-container-3">
+				<div class="animation-3 active"></div>
+				<button class="animation-toggle-3">Toggle Animations</button>
+			</div>
+
+			<div class="animation-container-4">
+				<div class="animation-4 active"></div>
+				<button class="animation-toggle-4">Toggle Animations</button>
+			</div>
+
+			<div class="animation-container-5">
+				<div class="animation-5 active"></div>
+				<button class="animation-toggle-5">Toggle Animations</button>
+			</div>
+
+			<div class="animation-container-6">
+				<div class="animation-6 active"></div>
+				<button class="animation-toggle-6">Toggle Animations</button>
+			</div>
+
+			<div class="animation-container-7">
+				<div class="animation-7 active"></div>
+				<button class="animation-toggle-7">Toggle Animations</button>
+			</div>
+
+			<div class="animation-container-8">
+				<div class="animation-8 active"></div>
+				<button class="animation-toggle-8">Toggle Animations</button>
+			</div>
+			<div class="animation-container-9">
+				<div class="animation-9 active"></div>
+				<button class="animation-toggle-9">Toggle Animations</button>
+			</div>
 		</div>
 		<script>
-			const animations = document.querySelectorAll(
-				'.animation-1, .animation-2, .animation-3, .animation-4, .animation-5, .animation-6, .animation-7, .animation-8, .animation-9'
+			const btns = document.querySelectorAll(
+				'button[class^="animation-toggle-"]'
 			);
-			animations.forEach((animation) => {
-				animation.addEventListener('click', () => {
-					animation.classList.toggle('active');
+			btns.forEach((btn, index) => {
+				btn.addEventListener('click', () => {
+					const animationDiv = document.querySelector(
+						`.animation-${index + 1}`
+					);
+					animationDiv.classList.toggle('active');
 				});
 			});
 		</script>
